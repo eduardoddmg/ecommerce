@@ -1,0 +1,41 @@
+.menu{
+    flex-direction: column;
+    width: 20%;
+}
+
+.card
+{
+    width: 30%;
+}
+
+.central
+{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .central
+    {
+        width: 100%;
+        justify-content: center;
+    }
+    .menu
+    {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
+    .geral
+    {
+        flex-direction: column;
+    }
+    .btn_geral
+    {
+        margin: 0 2vh;
+    }
+    .card
+    {
+        width: 100%;
+    }
+}

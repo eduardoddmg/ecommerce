@@ -1,0 +1,17 @@
+.navbar
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2vh 3vh;
+    background-color: rgb(64, 143, 233);
+    color: white;
+    align-items: center;
+    position: sticky;
+}
+
+.navbar *
+{
+    color: white;
+    font-weight: bold;
+}

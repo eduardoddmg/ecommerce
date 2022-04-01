@@ -1,0 +1,20 @@
+.final
+{
+    bottom: 0px;
+    position:sticky;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.final button
+{
+    border: none;
+    background-color: rgb(72, 164, 226);
+    color: white;
+    font-weight: bold;
+    padding: 2vh;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 50%;
+}
