@@ -15,7 +15,6 @@ function App() {
   const [cart2, setCart2] = useState([]);
   const [arr, setArr] = useState([]);
   const [red, setRed] = useState(false);
-  useEffect(() => setArr(() => cart.filter((val) => val.quantidade > 0)));
   return (
     <>
       <Navbar cart={cart} arr={arr} setArr={setArr} />
@@ -45,7 +44,7 @@ function App() {
             <Bebidas cart={cart} setCart={setCart} arr={arr} setArr={setArr} />
           }
         />
-        <Route path="/checkout" element={<Checkout arr={arr} cart={cart} />} />
+        <Route path="/checkout" element={<Checkout arr={arr} cart={cart} setArr={setArr} />} />
       </Routes>
     </>
   );

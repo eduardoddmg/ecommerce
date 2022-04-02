@@ -3,6 +3,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router'
 import {Modal, Button, Table} from "react-bootstrap";
 
 import "../style/navbar.css";
@@ -23,6 +24,7 @@ const Navbar = ({ cart, setArr, arr }) => {
           <Modal.Title>Lista de compras</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {arr.length == 0 && <h6>Não há nada no seu carrinho</h6>}
           <Table striped bordered hover>
             {arr.length > 0 && (
               <thead>
@@ -33,27 +35,29 @@ const Navbar = ({ cart, setArr, arr }) => {
                 </tr>
               </thead>
             )}
-            {arr.length == 0 && <h6>Não há nada no seu carrinho</h6>}
             <tbody>
               {arr.map((val) => {
                 return (
-                  <tr>
+                  <tr key={val.id}>
                     <td>{val.id}</td>
                     <td>{val.nome}</td>
                     <td>{val.quantidade}</td>
                     <td>
                       <Button
-                        variant="primary"
+                        variant="danger"
                         onClick={() => {
                           for (let i of cart) {
                             if (i.id === val.id && i.quantidade > 0)
                               i.quantidade--;
                           }
+                          setArr(() =>
+                            cart.filter((val) => val.quantidade > 0)
+                          );
                           console.log(cart);
                           console.log(arr);
                         }}
                       >
-                        Remover
+                        X
                       </Button>
                     </td>
                   </tr>

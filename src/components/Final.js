@@ -7,18 +7,13 @@ import {Link} from 'react-router-dom'
 
 const Final = ({ arr, setArr, cart }) => {
   const [count, setCount] = useState(0);
-  useEffect(() => {
-    let quantidade = 0;
-    for (let i of arr) quantidade += i.quantidade;
-    setCount(() => quantidade);
-  });
-      const [show, setShow] = useState(false);
-      const handleClose = () => {
-        setShow(false);
-      };
-      const handleShow = () => {
-        return setShow(true);
-      };
+  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    return setShow(true);
+  };
 
 
   return (
@@ -43,23 +38,26 @@ const Final = ({ arr, setArr, cart }) => {
             <tbody>
               {arr.map((val) => {
                 return (
-                  <tr>
+                  <tr key={val.id}>
                     <td>{val.id}</td>
                     <td>{val.nome}</td>
                     <td>{val.quantidade}</td>
                     <td>
                       <Button
-                        variant="primary"
+                        variant="danger"
                         onClick={() => {
                           for (let i of cart) {
                             if (i.id === val.id && i.quantidade > 0)
                               i.quantidade--;
                           }
+                          setArr(() =>
+                            cart.filter((val) => val.quantidade > 0)
+                          );
                           console.log(cart);
                           console.log(arr);
                         }}
                       >
-                        Remover
+                        X
                       </Button>
                     </td>
                   </tr>
@@ -87,7 +85,7 @@ const Final = ({ arr, setArr, cart }) => {
       ;
       {arr.length > 0 && (
         <div className="final">
-          <button onClick={handleShow}>Itens selecionados {count}</button>
+          <button onClick={handleShow}>Itens selecionados {arr.length}</button>
         </div>
       )}
     </>

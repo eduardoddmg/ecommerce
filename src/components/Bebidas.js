@@ -10,9 +10,6 @@ const Produtos = ({ cart, setCart, arr, setArr }) => {
   useEffect(() => {
     setCart(() => data);
   }, []);
-  useEffect(() => {
-    setArr(() => cart.filter((val) => val.quantidade > 0))
-  });
   return (
     <>
     <section style={{display: 'flex'}} className='geral'>
@@ -33,7 +30,7 @@ const Produtos = ({ cart, setCart, arr, setArr }) => {
                   margin: "2vh 2vh",
                   padding: "2vh",
                 }}
-                className='card'
+                className="card"
                 key={value.id}
               >
                 <h4>{value.nome}</h4>

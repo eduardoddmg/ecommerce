@@ -10,7 +10,6 @@ const Tudo = ({ cart, setCart, arr, setArr }) => {
   useEffect(() => {
     setCart(() => data);
   }, []);
-  useEffect(() => setArr(() => cart.filter((val) => val.quantidade > 0)));
   return (
     <>
       <section style={{ display: "flex" }} className="geral">
