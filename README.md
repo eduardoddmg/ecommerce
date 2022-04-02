@@ -1,6 +1,8 @@
 ## Info
-* Esse projeto foi desenvolvido com REACT.
+* Esse projeto foi desenvolvido com ReactJS e Bootstrap.
 * É um ecommerce simples com o intuito de mostrar um cardápio e um carrinho de compras
+* ![Imagem de visualização](overview.png)
+* [Link do deploy](https://edu-ecommerce.netlify.app)
 ## Available Scripts
 
 In the project directory, you can run:
